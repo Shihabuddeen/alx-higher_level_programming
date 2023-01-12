@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <string.h>
 #include <Python.h>
 
@@ -16,7 +15,8 @@ void print_python_list(PyObject *p)
 	PyObject *obj;
 
 	alloc = ((PyListObject *)p)->allocated;
-	size = printf("[*] Python list info\n");
+	size = PyList_Size(p);
+	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %d\n", size);
 	printf("[*] Allocated = %d\n", alloc);
 	for (idx = 0; idx < size; idx++)
@@ -41,8 +41,8 @@ void print_python_bytes(PyObject *p)
 	int size, num, i;
 	char *byte_string, bytes[NUM_BYTES];
 
-
-	printf("[.] bytes object info\n");if (PyBytes_CheckExact(p))
+	printf("[.] bytes object info\n");
+	if (PyBytes_CheckExact(p))
 	{
 		byte_string = PyBytes_AsString(p);
 		size = PyBytes_Size(p);
@@ -80,3 +80,4 @@ void print_python_bytes(PyObject *p)
 	{
 		printf("  [ERROR] Invalid Bytes Object\n");
 	}
+}
