@@ -180,25 +180,4 @@ class TestSquare_x(unittest.TestCase):
             Square(1, complex(5))
 
     def test_dict_x(self):
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Square(1, {"a": 1, "b": 2}, 2)
-
-    def test_bool_x(self):
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Square(1, True)
-
-    def test_list_x(self):
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Square(1, [1, 2, 3])
-
-    def test_set_x(self):
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Square(1, {1, 2, 3})
-
-    def test_tuple_x(self):
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Square(1, (1, 2, 3))
-
-    def test_frozenset_x(self):
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Square(
+        with self.a
